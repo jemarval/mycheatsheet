@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JM's HTML-CSS Reference Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Source+Sans+Pro:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<!-- * CODE INDEX -->
+<!-- TODO LINE:24 HTML TABLES  -->
+<!-- TODO LINE:109 LINKS&BUTTONS  -->
+<!-- TODO LINE:247 FLEXBOX  -->
+<!-- TODO LINE:501 CSS GRID  -->
+<!-- * -- -- -- * -->
+<body>
+    <header>
+        <h1 class="center">JM's HTML-CSS Reference Sheet</h1>
+    </header>
+    <section>
+        <h2 class="center">HTML</h2>
+        <article id="table">
+               <table class="table">
+                <caption><h4>HTML Tables</h4></caption>
+                <thead>
+                    <tr>
+                        <th class="textleft">Element</th>
+                        <th>Name/value</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tablesubtitle">
+                        <td colspan="3">Table Tags</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;table&gt;</code></td>
+                        <td>Table</td>
+                        <td>A wrapper element for all HTML tables.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;caption&gt;</code></td>
+                        <td>Table caption</td>
+                        <td>Must be inserted inmediately after the <code>&lt;table&gt;</code> tag. It can be alligned and placed in css using <em>text-align</em> and <em>caption-side</em></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;colgroup&gt;</code></td>
+                        <td>Col Group formatting</td>
+                        <td>useful for applying styles to entire columns, instead of repeating the styles for each cell, for each row.
+                            To define different properties to a column within a <code>&lt;colgroup&gt;</code> we use the <code>&lt;col&gt;</code> tag with the <em>span</em> property.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;thead&gt;</code></td>
+                        <td>Table Header group</td>
+                        <td>Used with <code>&lt;tbody&gt;</code> and <code>&lt;tfoot&gt;</code>. Doesn't change the layout but can be styled with css. Must have one or more <code>&lt;tr&gt;</code> inside.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;tr&gt;</code></td>
+                        <td>Table Rows</td>
+                        <td>Each table row starts with a <code>&lt;tr&gt;</code> and ends with a <code>&lt;/tr&gt;</code> tag.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;th&gt;</code></td>
+                        <td>Table Header Cell</td>
+                        <td>When you need header cells, you can use <code>&lt;th&gt;</code> instead of <code>&lt;td&gt;</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;td&gt;</code></td>
+                        <td>Table cell (table data)</td>
+                        <td>Each table cell is defined by a <code>&lt;td&gt;</code> and a <code>&lt;td&gt;</code> tag.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;tbody&gt;</code></td>
+                        <td>Table Body group</td>
+                        <td>Browsers can use these elements to enable scrolling of the table body independently of the header and footer. Must have one or more <code>&lt;tr&gt;</code> inside.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;tfoot&gt;</code></td>
+                        <td>Table Footer group</td>
+                        <td>Browsers can use these elements to enable scrolling of the table body independently of the header and footer. Must have one or more <code>&lt;tr&gt;</code> inside.</td>
+                    </tr>
+                    <tr class="tablesubtitle">
+                        <td colspan="3">Table Atributes</td>
+                    </tr>
+                    <tr>
+                        <td><code>colspan</code></td>
+                        <td>Column Span</td>
+                        <td>This attribute defines the number of columns a cell should span. Eg.   <code>&lt;td colspan="3"&gt;</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>rowspan</code></td>
+                        <td>Row Span</td>
+                        <td>This attribute defines the number of rows a cell should span. Eg.   <code>&lt;td rowspan="2"&gt;</code>.</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3"><span class="underline">The order of the elements should be</span>: <br><code>&lt;table&gt;</code><br> <code>&lt;caption&gt;</code><br> <code>&lt;colgroup&gt;</code><br> <code>&lt;thead&gt;</code> (with <code>&lt;tr&gt;</code> inside grouping <code>&lt;th&gt;</code> cells)<br> <code>&lt;tbody&gt;</code>(with <code>&lt;tr&gt;</code> inside grouping <code>&lt;td&gt;</code> cells)<br><code>&lt;tfoot&gt;</code>(with <code>&lt;tr&gt;</code> inside grouping <code>&lt;td&gt;</code> cells).</td>
+                    </tr>
+                </tfoot>
+                
+            </table>
+        </article>
+        <article id="links-buttons">
+            <table class="table">
+             <caption><h4>Links and Buttons</h4></caption>
+             <thead>
+                 <tr>
+                     <th class="textleft">Element</th>
+                     <th>Name/value</th>
+                     <th>Notes</th>
+                 </tr>
+             </thead>
+             <tbody>                 
+                 <tr>
+                     <td><code>title=""</code></td>
+                     <td>title atribute</td>
+                     <td>Its added to links to create a tooltip. Like this:<code>&lt;a title="Tooltip for link"&gt;Link&lt;a&gt;</code> </td>
+                 </tr>
+                 <tr>
+                     <td><code>a:hover</code></td>
+                     <td>:hover css pseudo class</td>
+                     <td>We can change the behaviour of elements when on mouse hover with this <code>:hover</code> on our css selectors.</td>
+                 </tr>
+                 <tr>
+                     <td><code>a {<br>cursor:pointer;<br>}</code></td>
+                     <td>Cursor css declaration</td>
+                     <td>This should change the appeareance of the cursor to a pointing hand. Usually by defaukt. Shouldnt be added to the <code>a:hover</code> declaration</td>
+                 </tr>
+                 <tr>
+                     <td><code>:link</code><br><code>:visited</code><br><code>:hover</code><br><code>:active</code></td>
+                     <td>Link states, <br>in order.</td>
+                     <td>The ordering of link state pseudo-class rules is important to reveal the proper information. When a user hovers and then clicks a link, those styles should always override the static styling surrounding a user's history with the link (unvisited <code>:link</code> and <code>:visited</code>).This ordering will ensure that the rules cascade properly and the user can receive the most applicable visual feedback about the state of the link.</td>
+                 </tr>
+                 <tr class="tablesubtitle">
+                    <td colspan="3">Breadcrumb Navigation</td>
+                </tr>
+                 <tr>
+                     <td><code>.breadcrumb li+li::before {<br>
+                        content: "/";<br>
+                        color: gray;<br>
+                      }</code></td>
+                     <td><em>see notes</em></td>
+                     <td>The <code>+</code> is called the adjacent sibling combinator; it will only select two <code>li</code>'s when they are immediately next to each other, with the same parent. The element that actually gets selected is the second element of this sibling pair.
+                        The <code>::before</code> part of this selector creates a pseudo-element. The <code>::before</code> pseudo-element is often used with the <em>content</em> property, to add content that will be displayed just before the selected element.</td>
+                 </tr>
+                 <tr>
+                    <td><code>.breadcrumb > li { <br>
+                        display: inline; <br>                      
+                      }</code>
+                    <code>.breadcrumb a { <br>
+                        text-decoration: none; <br>
+                    }</code>
+                    <code>
+                        breadcrumb a:hover {<br>
+                            color: red;<br>
+                        }
+                    </code>
+                    </td>
+                    <td><em>see notes</em></td>
+                    <td>An example of basic breadcrumb css styling with appropiate selectors.</td>
+                </tr>
+                <tr>
+                    <td><em>See notes</em></td>
+                    <td><em>See notes</em></td>
+                    <td>
+                        <span class="underline">A more advanced example with arrow effect</span>
+                        <img class="small-img" src="./resources/img/breadcrumb.png" alt="Styled Breadcrumb" title="Styled Breadcrumb">
+                        
+                        <code>
+                            .breadcrumb {<br>
+                                text-align: left;<br>
+                              } 
+                              .breadcrumb li {<br>
+                                float: left;<br>
+                              }
+                              .breadcrumb a {<br>
+                                color: #fff;<br>
+                                background: darkcyan;<br>
+                                text-decoration: none;<br>
+                                position: relative;<br>
+                                height: 30px;<br>
+                                line-height: 30px;<br>
+                                text-align: center;<br>
+                                margin-right: 15px;<br>
+                                padding: 0 10px;<br>
+                              }
+                              .breadcrumb a::before,<br>
+                              .breadcrumb a::after {<br>
+                                content: "";<br>
+                                position: absolute;<br>
+                                border-color: darkcyan;<br>
+                                border-style: solid;<br>
+                                border-width: 15px 10px;<br>
+                              }
+                              .breadcrumb a::before {<br>
+                                left: -10px;<br>
+                                border-left-color: transparent;<br>
+                              }
+                              .breadcrumb a::after {<br>
+                                left: 100%;<br>
+                                border-color: transparent;<br>
+                                border-left-color: darkcyan;<br>
+                              }
+                              .breadcrumb a:hover {<br>
+                                background-color: blue;<br>
+                              }
+                              .breadcrumb a:hover::before {<br>
+                                border-color: blue;<br>
+                                border-left-color: transparent;<br>
+                              }
+                              .breadcrumb a:hover::after {<br>
+                                border-left-color: blue;<br>
+                              } <br>
+                        </code>
+                    </td>
+                </tr>
+                 
+             </tbody>
+             <tfoot>
+                 <tr>
+                     <td colspan="3">
+                        <p><span class="underline">Breadcrumb Pitfalls</span>
+                            Sometimes it is not appropriate to use breadcrumbs as a means of secondary navigation within a website. Users expect breadcrumbs to behave a certain way and attempts to deviate from this may confuse them. Most users are expecting breadcrumbs to expose the hierarchy of the site or display attributes of the page they are on.
+                            
+                            Path based breadcrumbs are unique to a user's journey and are not commonly implemented. Only use this type of breadcrumbs if there is a compelling reason for it.
+                            
+                            While breadcrumbs are common, it is not the primary way users will navigate a site. Don't make the breadcrumbs the only navigation structure.
+                            
+                            In general, the rule of not adding anything extraneous to the design applies here. If the site only contains a few pages or if the pages in the breadcrumbs are already available through primary navigation, there is little reason to include breadcrumbs in the design.</p>
+                     </td>
+                 </tr>
+             </tfoot>
+             
+         </table>
+     </article>
+     </section>
+
+     <section>
+        <h2 class="center">CSS</h2>
+        <!-- --------------------- Flexbox ----------------- -->
+        <article id="flexbox" class="">
+            <table class="table">
+            <caption><h4>Flexbox</h4></caption>
+            <thead>
+                <tr>
+                    <th class="textleft">Element</th>
+                    <th>Name/values</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tablesubtitle">
+                    <td colspan="3">Flex container</td>
+                </tr>
+                <tr>
+                    <td><code>display: flex;</code><br></td>
+                    <td>Flex container</td>
+                    <td><p>the containter into a <em>flex container</em>, allowing to apply other flex properties to itself and its children which become <em>flex items</em>.</p>
+                        <p>A div with the declaration <code>display: flex;</code> will remain block level — no other elements will appear on the same line as it. However, it will change the behavior of its child elements. Child elements will not begin on new lines.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>display: inline-flex;</code><br></td>
+                    <td>Flex container (inline)</td>
+                    <td><p>If we didn't want div elements to be block-level elements, but that multiple flex containers to display inline with each other, we would use <code>display: inline</code>.</p> 
+                        <p>Flexbox, however, provides the <em>inline-flex</em> value for the <em>display</em> property, which allows us to create flex containers that are also inline elements.</p>
+                        <img src="/resources/img/inlineflex.png" class="small-img" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>justify-content:</code></td>
+                    <td><em>: flex-start;</em><br>
+                        <em>: flex-end;</em><br>
+                        <em>: center;</em><br>
+                        <em>: space-around;</em><br>
+                        <em>: space-between;</em><br>
+                    </td>
+                    <td><p>Allows us to specify how flex items spread out <span class="bold underline">along the main axis</span>  (from left to right, whith default row direction). Below are five commonly used values for the <code>justify-content</code> property:</p>
+                        
+                        <p><code>flex-start</code>: all items will be positioned in order, starting from the left of the parent container, with no extra space between or before them.</p>
+                        <p><code>flex-end</code>: all items will be positioned in order, with the last item starting on the right side of the parent container, with no extra space between or after them.</p>
+                        <p><code>center</code>: all items will be positioned in order, in the center of the parent container with no extra space before, between, or after them.</p>
+                        <p><code>space-around</code>: items will be positioned with equal space before and after each item, resulting in double the space between elements.</p>
+                        <p><code>space-between</code>: items will be positioned with equal space between them, but no extra space before the first or after the last elements.</p>
+                        <img src="/resources/img/justifycontent.jpeg" class="small-img" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>align-items:</code></td>
+                    <td><em>: flex-start;</em><br>
+                        <em>: flex-end;</em><br>
+                        <em>: center;</em><br>
+                        <em>: baseline;</em><br>
+                        <em>: stretch;</em><br>
+                    </td>
+                    <td><p>Allows us to specify how flex items spread out <span class="bold underline">along the cross axis</span> (from top to bottom, whith default row direction). Below are five commonly used values for the <code>align-items</code> property:</p>
+                        
+                        <p><code>flex-start</code>: all elements will be positioned at the top of the parent container.</p>
+                        <p><code>flex-end</code>: all elements will be positioned at the bottom of the parent container.</p>
+                        <p><code>center</code>: the center of all elements will be positioned halfway between the top and bottom of the parent container.</p>
+                        <p><code>baseline</code>: the bottom of the content of all items will be aligned with each other.</p>
+                        <p><code>stretch</code>: if possible, the items will stretch from top to bottom of the container (this is the default value; elements with a specified height will not stretch; elements with a minimum height or no height specified will stretch).</p>
+                        <img src="/resources/img/alignitems.png" class="small-img" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>flex-wrap:</code></td>
+                    <td>
+                        <em>: wrap;</em><br>
+                        <em>: wrap-reverse;</em><br>
+                        <em>: nowrap;</em><br>
+                    </td>                
+                    <td>
+                        <p>We can use this property when we don't want our content to shrink to fit its container, but instead, we might want flex items to move to the next line when necessary.</p>
+                        <p>The values accepted are:</p>
+                        <p><code>wrap:</code>- child elements of a flex container that don't fit into a row will move down to the next line</p>
+                        <p><code>wrap-reverse:</code>- the same functionality as <code>wrap</code>, but the order of rows within a flex container is reversed</p>
+                        <p><code>nowrap:</code>- prevents items from wrapping; this is the default value and is only necessary to override a wrap value set by a different CSS rule.</p>
+                        <img src="/resources/img/flexwrap.png" class="small-img" alt="">
+                        <p>Notice that, if we apply a <code>justify-content: space-around;</code> to the container, it will be applied to each row created:</p>
+                        <img src="/resources/img/flexwrap-spacearound.png" class="small-img" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>align-content:</code></td>
+                    <td>
+                        <em>: flex-start;</em><br>
+                        <em>: flex-end;</em><br>
+                        <em>: center;</em><br>
+                        <em>: space-around;</em><br>
+                        <em>: space-between;</em><br>
+                        <em>: stretch;</em><br>
+                    </td>
+                    <td>
+                        <p>Now that elements can wrap to the next line, we might have multiple rows of flex items within the same container. We use the <code>align-items</code> property to space flex items from the top to the bottom of a flex container, <span class="bold underline">within a single row</span>. If a flex container has multiple rows of content (after applying the <code>flex-wrap</code> property on our flex container), we can use align-content to space the rows from top to bottom.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>flex-direction:</code></td>
+                    <td>
+                        <em>: row;</em><br>
+                        <em>: row-reverse;</em><br>
+                        <em>: column;</em><br>
+                        <em>: column-reverse;</em><br>
+                    </td>
+                    <td><p>By default, flex items that stretch and shrink horizontally (main-axis) and wrap vertically (cross-axis).</p>
+                        <p>The main axis is used to position flex items with the following properties:</p>
+                        <ol>
+                            <li><code>justify-content</code></li>
+                            <li><code>flex-wrap</code></li>
+                            <li><code>flex-grow</code></li>
+                            <li><code>flex-shrink</code></li>
+                        </ol>
+                        <p>The cross axis is used to position flex items with the following properties:</p>
+                        <ol>
+                            <li><code>align-items</code></li>
+                            <li><code>align-content</code></li>
+                        </ol>
+                        <p>The main axis and cross axis are interchangeable. We can switch them using the <code>flex-direction</code> property. If we give it a value of column, the flex items will be ordered vertically, not horizontally.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>flex-flow:</code></td>
+                    <td><em>flex-direction</em><br>
+                        <em>flex-wrap</em>;<br>
+                    </td>
+                    <td><p>The shorthand <code>flex-flow</code> is a shorthand to declare <code>flex-direction</code> and <code>flex-wrap</code> in one line. For example:</p>
+                        <p><code>.container {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap;<br>
+                        }</code></p>
+                        <p>Can be redeclared like this:</p>
+                        <p><code>.container {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;flex-flow: column wrap;<br>
+                        }</code></p>
+                    </td>
+                </tr>
+
+
+
+
+
+                <tr class="tablesubtitle">
+                    <td colspan="3">Flex items</td>
+                </tr>
+                <tr>
+                    <td><code>flex-grow:</code></td>
+                    <td><em>number value</em><br>Default is "0"</td>
+                    <td>
+                        <p>if the parent container is larger than necessary then the flex items will not stretch by default. The flex-grow property allows us to specify if items should grow to fill a container and also which items should grow proportionally more or less than others.</p>
+                        <p>If a max-width is set for an element, it will not grow larger than that even if there is more space for it to absorb.</p>
+                        <p class="bold">Resize the box to see the differences</p>
+                        
+                        <div class="flexgrow-example">
+                            <p class="bold">Example 1</p>
+                            <div id='top'>
+                                <div class='top side'>
+                                <p>flex-grow: 1;</p>
+                                </div>
+                                <div class='top center'>
+                                <p>flex-grow: 1;</p>
+                                </div>
+                                <div class='top side'>
+                                <p>flex-grow: 1;</p>
+                                </div>
+                            </div>
+                            <p class="bold">Example 2</p>
+                            <div id='middle'>
+                                <div class='middle side'>
+                                <p></p>
+                                </div>
+                                <div class='middle center'>
+                                <p>flex-grow: 1;</p>
+                                </div>
+                                <div class='middle side'>
+                                <p></p>
+                                </div>
+                            </div>
+                            <p class="bold">Example 3</p>
+                            <div id='bottom'>
+                                <div class='bottom side'>
+                                <p>flex-grow: 1;</p>
+                                </div>
+                                <div class='bottom center'>
+                                <p>flex-grow: 3;</p>
+                                </div>
+                                <div class='bottom side'>
+                                <p>flex-grow: 1;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>flex-shrink:</code></td>
+                    <td><em>number value</em><br>Default is "1"</td>
+                    <td><p>Just as the <code>flex-grow</code> property proportionally stretches flex items, the <code>flex-shrink</code> property can be used to specify which elements will shrink and in what proportions.</p>
+                        <p>You may have noticed in earlier exercises that flex items shrank when the flex container was too small, even though we had not declared the property. This is because the default value of <code>flex-shrink</code> is 1. However, flex items do not grow unless the <code>flex-grow</code> property is declared because the default value of flex-grow is 0.</p>
+                        <p>Margins are unaffected by flex-grow and flex-shrink.</p>
+                        <p>Keep in mind, minimum and maximum widths will take precedence over <code>flex-grow</code> and <code>flex-shrink</code>. As with <code>flex-grow</code>, <code>flex-shrink</code> will only be employed if the parent container is too small or the browser is adjusted.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>flex-basis:</code></td>
+                    <td><em>dimension</em><br>(e.g. px)</td>
+                    <td><p>Defines the size of flex items before they are placed into a flex container. It's the ideal or hypothetical size of the items.</p>
+                        <p>Flex item sizing follows this specific formula:</p>
+                        <p class="grayborder"><code>content</code> —> <code>width</code> —> <code>flex-basis</code> (limted by <code>max-width</code> & <code>min-width</code>)</p>
+                        <p>For determining the size of a flex item the <em>final</em> <code>flex-basis</code> bound by <code>min-width</code> and <code>max-width</code> is all that matters.</p>
+                        <p class="bold">NOTE: The flexbox spec calls this the "hypothetical main size", but it's a lot simpler to think of it as the final flex-basis.</p>
+                        <p class="bold">If no <code>flex-basis</code> is specified, then the <code>flex-basis</code> falls back to the item's <code>width</code> property. If no <code>width</code> is specified, then the <code>flex-basis</code> falls back to the computed width of the item's contents.</p>
+                        <p>For more in depth info, check out the <a href="https://mastery.games/post/the-difference-between-width-and-flex-basis/" target="_blank">difference between width and flex basis</a>.</p>                
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>flex:</code></td>
+                    <td><em>flex-grow</em><br>
+                        <em>flex-shrink</em><br>
+                        <em>flex-basis</em>;<br>
+                    </td>
+                    <td><p>The shorthand <code>flex</code> property provides a convenient way for specifying how elements stretch and shrink, while simplifying the CSS required. The flex property allows you to declare <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code> all in one line. For example:</p>
+                        <p><code>.big {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;flex-grow: 2;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;flex-shrink: 1;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;flex-basis: 150px;<br>
+                        }</code></p>
+                        <p>Can be redeclared like this:</p>
+                        <p><code>.big {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;flex: 2 1 150px; <br>
+                        }</code></p>
+                        <p class="bold"><span class="underline">NOTE:</span> You can declare <code>flex</code> with two values: <br>
+                        <code>flex-grow</code> + <code>flex-shrink</code> <span style="font-weight: 400;"><em>or,</em></span> <br>
+                        <code>flex-grow</code> + <code>flex-basis</code>.</p>
+                        <p>This means, <code>flex-grow</code> must <span class="bold">ALWAYS</span> be declared in <code>flex</code>.</p>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                <td colspan="3">
+                    <p><span class="underline">Nested Flexboxes:</span></p>
+                    <p>It is possible to position flex containers inside of one another.</p>
+                    <p>This way, flex items, can at the same time become flex containers.</p>
+                    <p>They then would take flex item properties in relation to its parent and siblings, but at the same time take flex container properties in relation to its children flex item elements.</p>             
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+        </article>   
+     
+        <!-- --------------------- Grid ----------------- -->
+
+        <article id="grid">
+            <table class="table">
+            <caption><h4>CSS Grid</h4></caption>
+            <thead>
+                <tr>
+                    <th class="textleft">Element</th>
+                    <th>Name/value</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tablesubtitle">
+                    <td colspan="3">Grid Container</td>
+                </tr>
+                <tr>
+                    <td><code>display: grid;</code></td>
+                    <td>Block level grid container</td>
+                    <td>Creates a grid container, which will be a parent to grid item children, and applies overarching styling and positioning to them.</td>
+                </tr>
+                <tr>
+                    <td><code>display: inline-grid</code></td>
+                    <td>inline grid container</td>
+                    <td>Same as before, but inline.</td>
+                </tr>
+                <tr>
+                    <td><code>grid-template-columns</code></td>
+                    <td><em>Dimension units</em><br> separated by a space</td>
+                    <td>
+                        <p>This defines the number and width of columns for the grid. For example:</p>
+                        <p><code>grid-template-columns: 100px 200px 200px</code> (creates 3 columns)</p>
+                        <p><code>grid-template-columns: 200px 60%</code>(creates 2 columns)</p>
+                        <p class="bold">When using percentages, columns are defined as a percentage of the defined width of the container.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>grid-template-rows:</code></td>
+                    <td><em>Dimension units</em><br> separated by a space</td>
+                    <td><p>Same as with <code>grid-template-columns</code></p></td>
+                </tr>
+                <tr>
+                    <td><code>grid-template:</code></td>
+                    <td><em>grid-template-rows</em><br>/<br><em>grid-template-columns</em></td>
+                    <td>
+                        <p>The shorthand <code>grid-template</code> replaces the two previous properties.</p>
+                        <p>The values <span class="bold">BEFORE</span> the slash represent the rows</p>
+                        <p>the values after the slash, the columns.</p>
+                        <aside>
+                            <h3>Fraction Units</h3>
+                            <p>CSS Grid introduced a new relative sizing unit: <code>fr</code> like a fraction.</p>
+                            <p>By using the <code>fr</code> unit, we can define the size of columns and rows as a fraction of the grid's length and width. <span class="bold uppercase">This unit was specifically created for use in CSS Grid</span>. Using fr makes it easier to prevent grid items from overflowing the boundaries of the grid. Consider the code below:</p>
+                            <p><code>
+                                .grid {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;width: 1000px;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;height: 400px;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;grid-template: 2fr 1fr 1fr <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 1fr 3fr 1fr;<br>
+                                }
+                            </code></p>
+                            <p>In this example, the grid will have three rows and three columns. The rows are splitting up the available 400 pixels of height into four parts. The first row gets two of those parts, the second row gets one, and the third row gets one. Therefore the first row is 200 pixels tall, and the second and third rows are 100 pixels tall.</p>
+                            <p>Each column’s width is a fraction of the available space. In this case, the available space is split into five parts. The first column gets one-fifth of the space, the second column gets three-fifths, and the last column gets one-fifth. Since the total width is 1000 pixels, this means that the columns will have widths of 200 pixels, 600 pixels, and 200 pixels respectively.</p>
+                            <p>It is possible to use <code>fr</code> with other units as well. When this happens, each <code>fr</code> represents a fraction of the <em>available</em> space.</p>
+                        </aside>
+                        <aside>
+                            <h3>The <code>repeat()</code> function</h3>
+                            <p>This function will duplicate the specifications for rows or columns a given number of times. For example:</p>
+                            <p><code>grid-template-columns: repeat(3, 100px);</code></p>
+                            <p>Is the same as writing</p>
+                            <p><code>grid-template-columns: 100px 100px 100px;</code></p>
+                            <p>Repeat is particularly useful with <code>fr</code>. For example, <code>repeat(5, 1fr)</code> would split your table into five equal rows or columns.</p>
+                            <p>Finally, the second parameter of <code>repeat()</code> can have multiple values:</p>
+                            <p><code>grid-template-columns: repeat(2, 20px 50px)</code></p>
+                            <p>Will create four columns where the first and third columns will be 20 pixels wide and the second and fourth will be 50 pixels wide.</p>
+                        </aside>
+                        <aside>
+                            <h3>The <code>minmax()</code>function</h3>
+                            <p>This function allows to set a range of sizes for our dimmensions, that will change based on the size of our browser. For example:</p>
+                            <p><code>grid-template-columns: 100px minmax(100px, 500px) 100px;</code></p>
+                            <p>The second column, will vary in size as the grid resizes, always between 100 and 500 pixels wide</p>
+                            <p>To see this in action, is best not to set a fix with for the grid.</p>
+                        </aside>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>row-gap:</code>
+                        <p>&</p>
+                        <code>column-gap:</code>
+                    </td>
+                    <td><p><em>Dimension units;</em></p></td>
+                    <td><p>These properties specify the size of the gap (gutter) between rows and columns of the grid.</p></td>
+                </tr>
+                <tr>
+                    <td><code>gap:</code></td>
+                    <td><em>row-gap</em><br>
+                        <em>column gap;</em>
+                    </td>
+                    <td><p>Shorthand property to specify both row gap and column gap in one line.</p>
+                        <p>it can take one value, specifying the same for both rows and columns: <code>gap: 5%;</code></p>
+                        <p>We can also use the calculated values for it: <code>gap: calc(10% + 20px);</code></p>
+                        <p><span class="bold underline">Note:</span> grid gap properties do not add space at the beginning or end of the grid. They will take away from the space available inside for columns and rows.</p>
+                        <p><span class="bold underline">Note:</span> The <code>grid-row-gap</code>, <code></code>, and <code>grid-gap</code> properties in old code, are now deprecated. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                    <p><span class="underline">Summary Notes</span></p>  
+                    <p>The most basic layout properties we must set for <span class="bold">grid containers</span> are:</p>
+                    <p><code>
+                        ->&nbsp;&nbsp;&nbsp;display: grid;<br>
+                        ->&nbsp;&nbsp;&nbsp;grid-template: (rows) / (columns);<br>
+                        ->&nbsp;&nbsp;&nbsp;gap: row-gap column-gap;<br>
+                    </code></p>
+                    </td>
+                </tr>
+                <tr class="tablesubtitle">
+                    <td colspan="3">Grid Container - ADVANCED</td>
+                </tr>
+                <tr>
+                    <td><code>grid-template-areas:</code></td>
+                    <td><em>area names <br> See notes</em></td>
+                    <td><p>Allows us to name the grid areas of our layout, and order them in our columns and rows. consider the following code:</p>
+                        <img src="/resources/img/grid-template-areas.jpeg" alt="" class="medium-img">
+                        <p>You may want to expand this section of the website to view the code above more clearly.</p>
+                        <ol>
+                            <li>In the example above, the HTML creates a web page with five distinct parts.</li>
+                            <li>In the <code>.container</code> ruleset, the <code>grid-template-areas</code> declaration creates a 2-column, 4-row layout.</li>
+                            <li>The <code>grid-template-rows</code> declaration specifies the height of each of the four rows from top to bottom: 300 pixels, 120 pixels, 800 pixels, and 120 pixels.</li>
+                            <li>The <code>grid-template-columns</code> declaration uses the <code>fr</code> value to cause the left column to use one fourth of the available space on the page and the right column to use three-fourths of the available space on the page.</li>
+                            <li>In each ruleset below <code>.container</code>, we use the <code>grid-area</code> property to tell that section to cover the portion of the page specified. The <code>header</code> element spans the first row and both columns. The <code>nav</code> element spans the second row and both columns. The element with class <code>.info</code> spans the third row and left column. The element with class <code>.services</code> spans the third row and right column. The <code>footer</code> element spans the bottom row and both columns.</li>
+                            <li>That's it! An entire page laid out in 40 lines of code.</li>
+                        </ol>
+                        <aside>
+                            <h3>Overlapping Elements</h3>
+                            <p>Another powerful feature of CSS Grid Layout is the ability to easily overlap elements.</p>
+                            <p>When overlapping elements, it is generally easiest to use the <code>grid-area</code> property with grid row names. Remember that <code>grid-area</code> will set the starting and ending positions for both the rows and columns of an item.</p>
+                            <p>We can then use <code>z-index</code> to define which item will be on top of others</p>
+                        </aside>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>justify-items</code></td>
+                    <td><em>start;</em><br>
+                        <em>end;</em><br>
+                        <em>center;</em><br>
+                        <em>stretch;</em>
+                    </td>
+                    <td>
+                        <p>This property positions grid items along the inline, or row, axis. This means that it positions items from left to right across the web page. This property is declared on grid containers.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>justify-content</code></td>
+                    <td>
+                        <em>: start;</em><br>
+                        <em>: end;</em><br>
+                        <em>: center;</em><br>
+                        <em>: stretch;</em><br>
+                        <em>: space-around;</em><br>
+                        <em>: space-between;</em><br>
+                        <em>: space-evenly;</em>
+                    </td>
+                    <td>Allows to position the entire grid along the row axis, declared in the grid container.</td>
+                </tr>
+                <tr>
+                    <td><code>align-items</code></td>
+                    <td>
+                        <em>: start;</em><br>
+                        <em>: end;</em><br>
+                        <em>: center;</em><br>
+                        <em>: stretch;</em><br>
+                    </td>
+                    <td>
+                        <p>Lets position grid items within their rows (along the column axis). The default is <code>stretch</code>, with which the items will span of the row their in.</p>
+                        <p>If for example, we were to set the property to <code>center</code>, the items will be centered vertically inside of their rows. They will only be as tall as necessary to contain their content.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>align-content</code></td>
+                    <td>
+                        <em>: start;</em><br>
+                        <em>: end;</em><br>
+                        <em>: center;</em><br>
+                        <em>: stretch;</em><br>
+                        <em>: space-around;</em><br>
+                        <em>: space-between;</em><br>
+                        <em>: space-evenly;</em>
+                    </td>
+                    <td><p>Just as <code>align-items</code> helps us position items within their rows, <code>justify-content</code> positions the rows along the column axis, or from top to bottom (of container's height), and is declared on grid containers.</p></td>
+                </tr>
+
+                
+                <tr class="tablesubtitle">
+                    <td colspan="3">Grid Items</td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>grid-row-start:</code><br>
+                        <p>&</p>
+                        <code>grid-row-end</code>
+                    </td>
+                    <td><em>Line number <br> See notes</em>
+                    </td>
+                    <td>
+                        <p>With this properties we can set single grid items span multiple rows.</p>
+                        <p>Notice that the values accepted are <em>grid lines</em>, beginningfrom number 1 up to the last line of the grid. For example, if a grid has 5 rows, grid lines go from 1 to 6. The value <code>grid-row-end</code> should therefore be one greater than the row at which we want the grid item to end.</p>
+                        <p><span class="bold underline">Note:</span> It's possible for <code>grid-row-start</code> to have a greater value than <code>grid-row-end</code>. These also accept negative values. Check this article about <a href="https://css-irl.info/negative-grid-lines/" target="_blank">negative grid lines</a> for some use cases.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>grid-row:</code></td>
+                    <td><em>grid-row-start</em><br>
+                        / <br>
+                        <em>grid-row-end;</em>
+                    </td>
+                    <td><p>This is a shorhand to specify the row lines where an item starts and ends.</p>
+                        <p>For example, an item that occupies rows 5 and six can be defined like this: <code>grid-row: 4 / 6;</code></p>
+                        <aside>
+                            <h3>The keyword <code>span</code></h3>
+                            <p>When defining the previous properties, we can use the keyword <code>span</code> to start or end a column or row, relative to its other end. Look at how span is used in the code below:</p>
+                            <p><code>
+                                .item {<br>
+                                    &nbsp;&nbsp;&nbsp;grid-row: 4 / span 2;<br>
+                                    &nbsp;&nbsp;&nbsp;grid-column: 1 / span 4;<br>
+                                  }
+                            </code></p>
+                            <p>This is telling the item element to begin in row four and take up two rows of space. So item would occupy rows four and five. It has the same result as to code <code>grid-row: 4 / 6;</code>, only instead of declaring where it should start and end, we declare where to start and how long it should be.</p>
+                        </aside>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>grid-column:</code></td>
+                    <td><em>grid-column-start</em><br>
+                        / <br>
+                        <em>grid-column-end;</em>
+                    </td>
+                    <td><p>Same as with rows</p></td>
+                </tr>
+                <tr>
+                    <td id="gridareabasic"><code>grid-area:</code></td>
+                    <td><em>grid-row-start</em><br>
+                        / <br>
+                        <em>grid-column-start</em><br>
+                        / <br>
+                        <em>grid-row-end</em><br>
+                        / <br>
+                        <em>grid-column-end;</em>
+                    </td>
+                    <td><p>This is a way to refactor previous properties and <span>place items exactly where you want them in a grid. ORDER IS IMPORTANT.</span> For example:</p>
+                        <p>
+                            <code>
+                                .item {<br>
+                                    &nbsp;&nbsp;&nbsp;grid-area: 2 / 3 / 4 / span 5;<br>
+                                  }
+                            </code>
+                        </p>
+                        <p>This item will start on row <code>2</code> and end on row <code>4</code>, though the 4th row is not actually included, only rows <code>2</code> and <code>3</code>! The item will then start on column <code>3</code> and instead of setting a number for which column to end on, we want this item to <code>span 5</code> columns — this means the item will include columns <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, and <code>7</code>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                    <p><span class="underline">Summary Notes</span></p>  
+                    <p>The most basic layout properties we must set for <span class="bold">grid items</span> are:</p>
+                    <p>
+                        <code>
+                            ->&nbsp;&nbsp;&nbsp;grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end;<br>
+                        </code>
+                    </p>
+                    </td>
+                </tr>
+                <tr class="tablesubtitle">
+                    <td colspan="3">Implicit vs Explicit Grid</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <p>There are instances in which we don't know how much information we're going to display. For example, consider online shopping. Often, these web pages include the option at the bottom of the search results to display a certain quantity of results or to display ALL results on a single page. When displaying all results, the web developer can't know in advance how many elements will be in the search results each time.</p>
+                        <p>What happens if the developer has specified a 3-column, 5-row grid (for a total of 15 items), but the search results return 30?</p>
+                        <p>Something called the <em>implicit</em> grid takes over. The implicit grid is an algorithm built into the specification for CSS Grid that determines default behavior for the placement of elements when there are more than fit into the grid specified by the CSS.</p>
+                        <p class="bold">The default behavior of the implicit grid is as follows: items fill up rows first, adding new rows as necessary. New grid rows will only be tall enough to contain the content within them. In the next exercise, you’ll learn how to change this default behavior.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>grid-auto-rows:</code>
+                        <p>&</p>
+                        <code>grid-auto-columns:</code>
+                    </td>
+                    <td><em>dimensions units;</em>
+                    </td>
+                    <td>
+                        <p>CSS Grid provides two properties to specify the size of grid tracks added implicitly: <code>grid-auto-rows</code> and <code>grid-auto-columns</code>. These properties are declared on grid containers.</p>
+                        <p><code>grid-auto-rows</code> specifies the height of implicitly added grid rows. <code>grid-auto-columns</code> specifies the width of implicitly added grid columns.</p>
+                        <p>These properties accept the same values as their explicit counterparts, <code>grid-template-rows</code> and <code>grid-template-columns</code>: px, %, fr, repeat().</p>
+                        <img src="/resources/img/grid-auto-row.png" class="small-img" alt="">
+                        <p>In the example above, there are 5 div's. However, in the body ruleset, we only specify a 2-row, 2-column grid — four grid cells.</p>
+                        <p>The fifth div will be added to an implicit row that will be 50 pixels tall.</p>
+                        <p>If we did not specify <code>grid-auto-rows</code>, the rows would be auto-adjusted to the height of the content of the grid items.</p>
+                        <p>In the following example, a third column would take the width of 100px, a forth of 200px, a fifth of 100px again, and so on:</p>
+                        <p>
+                            <code>
+                                .grid { <br>
+                                &nbsp;&nbsp;&nbsp;grid-auto-columns: 100px 200px; <br>
+                                &nbsp;&nbsp;&nbsp;grid-auto-flow: column; <br>
+                                  }                                   
+                            </code>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>grid-auto-flow:</code></td>
+                    <td><em>row;</em>(default) <br>
+                        <em>column</em> <br>
+                        <em>dense</em>
+                    </td>
+                    <td>This property defines if new implicit elements should create a new row, art the bottom, from left to right; or a new column, at the right, from top to bottom.</td>
+                </tr>
+                <tr class="tablesubtitle">
+                    <td colspan="3">Grid Items - ADVANCED</td>
+                </tr>
+                <tr>
+                    <td><code>grid-area</code></td>
+                    <td><p><em>"Name for area";<br> specified on container's <code>grid-template-areas</code></em></p>
+                        <p>See also these other <a href="#gridareabasic">properties and notes for grid area</a>.</p>
+                    </td>
+                    <td>
+                        <p>Item1 gets the name "myArea", and spans all five columns in a five columns grid layout:</p>
+                        <p>
+                            <code>
+                                .grid-container { <br>
+                                    &nbsp;&nbsp;&nbsp;display: grid;<br>
+                                    &nbsp;&nbsp;&nbsp;grid-template-areas: 'myArea myArea myArea myArea myArea';<br>
+                                  } <br>
+                                .item1 {<br>
+                                    &nbsp;&nbsp;&nbsp;grid-area: myArea;<br>
+                                  }
+                            </code>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>justify-self:</code>
+                        <p>&</p>
+                        <code>align-self:</code>
+                    </td>
+                    <td>
+                        <em>start;</em><br>
+                        <em>end;</em><br>
+                        <em>center;</em><br>
+                        <em>stretch;</em>(default)
+                    </td>
+                    <td>
+                        <p>The <code>justify-items</code> and <code>align-items</code> properties specify how all grid items contained within a single container will position themselves along the row and column axes, respectively.</p>
+                        <p><code>justify-self</code> specifies how an individual element should position itself with respect to the row axis. This property will override <code>justify-items</code> for any item on which it is declared.</p>
+                        <p><code>align-self</code> specifies how an individual element should position itself with respect to the column axis. This property will override <code>align-items</code> for any item on which it is declared.</p>
+                        <p>These properties accept the same values as <code>align-items</code> and <code>justify-items</code>.</p>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                
+            </tfoot>         
+            </table>
+        </article>
+        <article>
+            <table class="table two-column-table">
+                <caption><h4>Relative Sizing</h4></caption>
+                <thead>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>em</code></td>
+                        <td>
+                            <p class="bold">Represents the font-size of the current element or the default base font-size set by the browser if none is given.</p>
+                            <p>For example, if the base font of a browser is 16 pixels (which is normally the default size of text in a browser), then 1 em is equal to 16 pixels. 2 ems would equal 32 pixels, and so on.</p>
+                            <p><code>
+                                .splash-section { <br>
+                                &nbsp;&nbsp;&nbsp;font-size: 18px; <br>
+                                  } <br>
+                                   <br>
+                                  .splash-section h1 { <br>
+                                    &nbsp;&nbsp;&nbsp;font-size: 1.5em; <br>
+                                  }
+                            </code></p>
+                            <p>The example above shows how to use ems without relying on the default font size of the browser. Instead, a base font size (code18px) is defined for all text within the <code>splash-section</code> element. The second CSS rule will set the font size of all h1 elements inside of <code>splash-section</code> relative to the base font of <code>splash-section</code> (18 pixels). The resulting font size of <code>h1</code> elements will be 27 pixels.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>rem</code></td>
+                        <td>
+                            <p>Stands for <em>root em</em></p>
+                            <p>It acts similar to <code>em</code>, but <span class="bold">instead of checking parent elements to size font, it checks the root element</span>. The root element is the <code>&lt;html&gt;</code> tag.</p>
+                            <p>Most browsers set the font size of <code>&lt;html&gt;</code> to 16 pixels, so by default rem measurements will be compared to that value. To set a different font size for the root element, you can add a CSS rule, for example: <code>html {font-size: 20px;}</code></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>%</code> <br>
+                        </td>
+                        <td>
+                            <h3>Height & Width</h3>
+                            <p>Percentages are often used to size box-model values, like width and height, padding, border, and margins. They can also be used to set positioning properties (top, bottom, left, right).</p>
+                            <p class="bold">When percentages are used, elements are sized relative to the dimensions of their parent element (also known as a container). Be careful, a child element's dimensions may be set erroneously if the dimensions of its parent element aren't set first.</p>
+                            <p><span class="bold">Note:</span> Because the box model includes padding, borders, and margins, setting an element's <code>width</code> to <code>100%</code> may cause content to overflow its parent container. While tempting, <code>100%</code> should only be used when content will not have padding, border, or margin.</p>
+                            <h3>Padding & Margin</h3>
+                            <p>When percentages are used to set padding and margin, however, they are calculated based only on the width of the parent element.</p>
+                            <p class="bold">Note: When using relative sizing, ems and rems should be used to size text and dimensions on the page related to text size (i.e. padding around text). This creates a consistent layout based on text size. Otherwise, percentages should be used.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p><code>min-width:</code></p>
+                            <p>&</p>
+                            <p><code>max-width:</code></p>
+                        </td>
+                        <td>
+                            <p class="bold">Units to use: <code>px</code></p>
+                            <p>Although relative measurements provide consistent layouts across devices of different screen sizes, elements on a website can lose their integrity when they become too small or large. You can limit how wide an element becomes with <code>min-width</code> and <code>max-width</code>.</p>
+                            <p><code>
+                                p { <br>
+                                &nbsp;&nbsp;&nbsp;min-width: 300px; <br>
+                                &nbsp;&nbsp;&nbsp;max-width: 600px; <br>
+                                  }
+                            </code></p>
+                            <p>In the example above, when the browser is resized, the width of paragraph elements will not fall below 300 pixels, nor will their width exceed 600 pixels.</p>
+                            <p>When a browser window is narrowed or widened, text can become either very compressed or very spread out, making it difficult to read. These two properties ensure that content is legible by limiting the minimum and maximum widths.</p>
+                            <p class="bold">Note: The unit of pixels is used to ensure hard limits on the dimensions of the element(s).</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p><code>min-height:</code></p>
+                            <p>&</p>
+                            <p><code>max-height:</code></p>
+                        </td>
+                        <td>
+                            <p>We can also set the minimum and maximum hwight of an element.</p>
+                            <p class="bold">REMEMBER: The unit of pixels is used to ensure hard limits on the dimensions of the element(s).</p>
+
+                        </td>
+                    </tr>
+                    <tr class="tablesubtitle">
+                        <td colspan="2">CSS Common Practices</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <aside>
+                                <h3>Scaling Images and Videos - Standard CSS - Common Practice -</h3>
+                                <p>The following CSS rules represent a <em>very common</em> design pattern used to scale images and videos proportionally.</p>
+                                <p><img src="/resources/img/img-video-sstandardcss.png" alt="" class="small-img"></p>
+                                <p>Setting <code>overflow</code> to <code>hidden</code> ensures that any content with dimensions larger than the container will be hidden from view.</p>
+                                <p>The second CSS rule ensures that images scale with the width of the container. The <code>height</code> property is set to <code>auto</code>, <span class="underline">meaning an image's height will <em>automatically</em> scale proportionally with the width</span>. Finally, the last line will display images as block level elements (rather than inline-block, their default state). This will prevent images from attempting to align with other content on the page (like text), which can add unintended margin to the images.</p>
+                                <p>Note: The example above scales the width of an image (or video) to the width of a container. If the image is larger than the container, the vertical portion of the image will overflow and will not display. To swap this behavior, you can set max-height to 100% and width to auto (essentially swapping the values). This will scale the height of the image with the height of the container instead. If the image is larger than the container, the horizontal portion of the image will overflow and not display.</p>
+                                <p class="bold">It's worth memorizing these rules, or use them in our default CSS resets, as they are standard practice and very common.</p>
+                            </aside>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <aside>
+                                <h3>Scaling background Images - Standard CSS - Common practice</h3>
+                                <img src="/resources/img/background-img-scale.png" class="small-img" alt="">
+                                <p>In the example above, the first CSS declaration sets the background image (# is a placeholder for an image URL in this example). The second declaration instructs the CSS compiler to not repeat the image (by default, images will repeat). The third declaration centers the image within the element.</p>
+                                <p>The final declaration, however, is the focus of the example above. It's what scales the background image. The image will cover the entire background of the element, all while keeping the image in proportion. If the dimensions of the image exceed the dimensions of the container then only a portion of the image will display.</p>
+                                <p></p>
+                            </aside>
+                        </td>
+                    </tr>
+                    <tr class="tablesubtitle">
+                        <td colspan="2">Media Queries</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Viewport Meta Tag</p>
+                        </td>
+                        <td>
+                            <p>In order for us to enable this responsive CSS to work, we need to get familiar with the HTML viewport meta tag. Inside the <code>&lt;head&gt;</code> element, we will find where the <code>&lt;meta&gt;</code> tag syntax is implemented:</p>
+                            <img src="/resources/img/viewport-meta-tag.png" class="small-img" alt="">
+                            <p>We can break down the added <code>&lt;meta&gt;</code> tag into the following essential components:</p>
+                            <ul>
+                                <li>the <code>name="viewport"</code> attribute: tells the browser to display the web page at the same width as its screen</li>
+                                <li>the <code>content</code> attribute: defines the values for the <code>&lt;meta&gt;</code> tag, including <code>width</code> and <code>initial-scale</code></li>
+                                <li>the <code>width=device-width</code> key-value pair: controls the size of the viewport in which it sets the width of the viewport to equal the width of the device</li>
+                                <li>he <code>initial-scale=1</code> key-value pair: sets the initial zoom level (Read more about scale at <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_basics" target="_blank">MDN's viewport documentation</a> )</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Media Queries</td>
+                        <td>
+                            <p>CSS uses media queries to adapt a website's content to different screen sizes. With media queries, CSS can detect the size of the current screen and apply different CSS styles depending on the width of the screen.</p>
+                            <img src="/resources/img/media-quer.png" class="small-img" alt="">
+                            <p>The example above demonstrates how a media query is applied. The media query defines a rule for screens smaller than 480 pixels (approximately the width of many smartphones in landscape orientation).</p>
+                            <p>Let's break this example down into its parts:</p>
+                            <ol>
+                                <li><code>@media</code> — This keyword begins a media query rule and instructs the CSS compiler on how to parse the rest of the rule.</li>
+                                <li><code>only screen</code> — Indicates what types of devices should use this rule. In early attempts to target different devices, CSS incorporated different media types (screen, print, handheld). The rationale was that by knowing the media type, the proper CSS rules could be applied. However, “handheld” and “screen” devices began to occupy a much wider range of sizes and having only one CSS rule per media device was not sufficient. <code>screen</code> is the media type always used for displaying content, no matter the type of device. The <code>only</code> keyword is added to indicate that this rule only applies to one media type ( <code>screen</code> ).</li>
+                                <li><code>and (max-width : 480px)</code> — This part of the rule is called a media feature, and instructs the CSS compiler to apply the CSS styles to devices with a width of 480 pixels or smaller. <span class="bold">Media features are the conditions that must be met in order to render the CSS within a media query</span>.</li>
+                                <li>CSS rules are nested inside of the media query's curly braces. The rules will be applied when the media query is met. In the example above, the text in the <code>body</code> element is set to a <code>font-size</code> of <code>12px</code> when the user's screen is less than 480px.</li>
+                            </ol>
+                            <aside>
+                                <h3>Range</h3>
+                                <p>We can use <code>min-width</code> and <code>max-width</code> as conditions in a media query declaration to determine a <span class>range</span>. These media features must be enclosed in parenthesis and chained with the <code>and</code> keyword.</p>
+                                <p>for example:</p>
+                                <p><code>@media only screen and (min-width: 320px) and (max-width: 480px) {}</code></p>
+                                <p>The rulesets inside this query would be applied only when screen size is between 320 and 480px.</p>
+                            </aside>
+                            <aside>
+                                <h3>Dots Per Inch (DPI)</h3>
+                                <p>Sometimes we want to render higher quality or hd images, only to users that can support high resolution.</p>
+                                <p>To target these devices we can use the <code>min-resolution</code> or <code>max-resolution</code> media features.</p>
+                                <p>for example:</p>
+                                <p><code>
+                                    @media only screen and (min-resolution: 300dpi) {<br>
+                                    &nbsp;&nbsp;&nbsp;.logo {background-image: url("../img/spaceship@2x.png");} <br>
+                                    }
+                                </code>
+                                <p>This mq would target only HR devices and show them a different image for the logo (like more details or better quality).</p>
+                                </p>
+                            </aside>
+                            <aside>
+                                <h3>Chain away with <code>and</code></h3>
+                                <p>We can chain multiple media features with <code>and</code>, not only for range. For example, if we want to increase the <code>font-size</code> for small low-res phones, we could use a mq like this:</p>
+                                <p><code>@media only screen and (max-width:480px) and (max-resolution:150dpi) {}</code></p>
+                            </aside>
+                            <aside>
+                                <h3>Comma <code>,</code> separated media features</h3>
+                                <p>In media queries, the comma works like <em>or</em>, meaning only one of the media features must be met.</p>
+                                <p>For example:</p>
+                                <p><code>@media only screen and (min-width: 480px), (orientation: landscape) {}</code></p>
+                                <p>If the screen is more than 480px <em>OR</em> the screen is in landscape mode, the css will be applied.</p>
+                            </aside>
+                            <aside>
+                                <h3>Breakpoints</h3>
+                                <p>Check out this breakpoints by device width:</p>
+                                <img src="/resources/img/breakpoints-device-width.png" class="medium-img" alt="">
+                                <p class="bold">IMPORTANT: <br>
+                                Instead of trying to create a breakpoint for every device imaginable, is best to notice the points where your responsive site NATURALLY BREAKES, and assign breakpints based on that. <br>
+                                This way, you can set media query breakpoints that create the best possible user experience on a project by project basis, rather than forcing every project to fit a certain screen size. Different projects have different needs, and creating a responsive design should be no different.
+                            </p>
+                            </aside>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+     </section>
+
+     <!-- *--------------- TEMPLATE (HIDDEN) ---------- -->
+     
+     <!-- <article class="hidden">
+        <table class="table">
+        <caption><h4>Links and Buttons</h4></caption>
+        ! NOT USING COLGROUP - EDITING WITH style="td:nth-child(1), th:nth-child(1){}"
+         <colgroup>
+            <col style="background-color: rgb(245, 245, 245); min-width: 150px;">             
+             <col style="min-width: 125px;">                 
+         </colgroup>  
+        !----------------------------------------------------------------------------
+         <thead>
+            <tr>
+                <th class="textleft">Element</th>
+                <th>Name/value</th>
+                <th>Notes</th>
+            </tr>
+         </thead>
+
+         <tbody>
+
+            TODO COPY DEFAULT ROW
+            <tr>
+                <td><code></code></td>
+                <td></td>
+                <td> </td>
+            </tr>   
+
+            TODO COPY FOR SUBTITLE
+            <tr class="tablesubtitle">
+                <td colspan="3"></td>
+            </tr>
+  
+         </tbody>
+         <tfoot>
+            <tr>
+                <td colspan="3">
+                   <p><span class="underline"></span></p>                        
+                </td>
+            </tr>
+         </tfoot>         
+     </table>
+     </article> -->
+
+     <!--* ---------------- END OF TEMPLATE ------------ -->
+    
+    
+</body>
+</html>

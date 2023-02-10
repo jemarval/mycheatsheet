@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --table-bg: transparent;
+    --light-gray: hsl(210, 14%, 89%);
+    --code-color: hsl(33, 100%, 88%);
+    --aside-color: hsl(204, 100%, 96%);
+    --black: hsl(0, 0%, 17%);
+    --border-radius: 5px;
+    --table-border-width: 1px;
+    --table-cell-padding: 5px;
+  }
+
+body {
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--black);
+    line-height: 1.5;
+    text-align: justify;
+}
+
+  h1 {
+    width: 100%;
+    background-color:var(--light-gray);
+    line-height: 2;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+  }
+
+  h2 {
+    margin: 2px 0;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    width: 100%;
+    background-color: var(--light-gray);
+    line-height: 2;
+  }
+
+  h3 {
+    font-family: 'Lora', serif;
+    font-size: 1em;
+    line-height: 1.2em;
+    font-weight: 700;
+    width: 100%;
+    text-decoration: underline;
+    margin: 5px 0 10px 0;
+  }
+
+  p {
+    margin-bottom: 8px;
+    text-align: justify;
+  }
+
+  caption {
+    width: 100%;
+    background-color: var(--black);
+  }
+
+  caption h4 {
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    color: var(--light-gray);
+    line-height: 2;
+  }
+
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: var(--table-bg);
+    text-align: left;
+    border-bottom: calc(2 * var(--table-border-width)) solid var(--black);
+    -webkit-box-shadow: 10px 10px 18px 0px rgba(222,226,230,0.75);
+    -moz-box-shadow: 10px 10px 18px 0px rgba(222,226,230,0.75);
+    box-shadow: 10px 10px 18px 0px rgba(222,226,230,0.75);
+    /*border-collapse: collapse;*/
+}
+
+th,
+td {
+      padding: var(--table-cell-padding);
+      vertical-align: top;
+      border-top: var(--table-border-width) solid var(--light-gray);
+      text-align: justify;
+      
+    }
+  
+thead th {
+      vertical-align: bottom;
+      border-bottom: calc(2 * var(--table-border-width)) solid var(--light-gray);
+      line-height: 2;
+      background-color: var(--light-gray);
+    }
+  
+tbody + tbody {
+      border-top: calc(2 * var(--table-border-width)) solid var(--light-gray);
+    }
+  
+    .table {
+      background-color: var(--table-bg);
+    }
+
+    td:nth-child(3) {
+      padding-right: 35px;
+    }
+
+    td:nth-child(2) {
+      text-align: left;
+    }
+
+    td:nth-child(1) {
+      min-width: 150px;
+      background-color: rgb(245, 245, 245);
+    }
+
+    .two-column-table th:nth-child(2), 
+    .two-column-table td:nth-child(2) {
+      width: 80%;
+      text-align: justify;
+      padding-right: 35px;
+    }
+
+tfoot tr>td {
+    background-color: var(--light-gray);
+    font-size: small;
+    padding: 10px 30px 10px calc(2* var(--table-cell-padding)) ;
+}
+
+.tablesubtitle { 
+    border-bottom: calc(2 * var(--table-border-width)) solid var(--light-gray);
+}
+
+.tablesubtitle>td {
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 0.8;    
+    background-color: var(--light-gray); 
+}
+
+code {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  background-color: var(--code-color);
+  font-size: small;
+  padding: 1px 5px;
+  border-radius: var(--border-radius);
+  white-space: nowrap;
+}
+
+article {
+  width: 60%;
+  margin: 30px auto;
+  overflow-x: auto;
+}
+
+aside {
+  padding: 10px;
+  margin: 1rem 0;
+  background-color: var(--aside-color);
+  border-radius: var(--border-radius);
+}
+
+.underline {
+  text-decoration: underline;
+}
+ol, ul {
+  margin: 8px 25px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+.br {
+  display: block;
+  margin-bottom: 0.4em;
+}
+
+.small-img {
+  max-width: 50%;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.medium-img {
+  max-width: 80%;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.grayborder {
+  border: 1px solid var(--light-gray);
+  padding: 10px;
+  border-radius: var(--border-radius);
+}
+
+/* Table Template */
+
+.hidden {
+  display: none;
+}
+
+  /* flex-grow example */
+
+.top,
+.middle,
+.bottom {
+  width: 100px;
+  height: 100px;
+  background-color: dodgerblue;
+  border: 2px solid lightgrey;
+  margin: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-gray);
+  font-weight: 700;
+}
+
+.top.side {
+  flex-grow: 1;
+
+}
+
+.top.center {
+  flex-grow:1
+
+}
+
+.middle.center {
+  flex-grow: 1;
+
+}
+
+.bottom.side {
+  flex-grow: 1;
+
+}
+
+.bottom.center {
+  flex-grow: 3;
+	
+}
+
+#top,
+#middle,
+#bottom {
+  display: flex;
+  background-color: Whitesmoke;
+  justify-content: center;
+  min-height: 200px;
+  align-items: center;
+  margin: 5px 0 15px 0;
+}
+
+.flexgrow-example {
+  resize: horizontal;
+  width: 90%;
+  height: auto;
+  overflow: auto;
+  border: 1px solid var(--light-gray);
+  padding: 10px;
+  border-radius: var(--border-radius);
+}
+
+
+/*   media queries */
+/* When designing mobile first, and media querying then for bigger screens, 
+We should use min-width or a min/max combination like the one here for mobile */
+
+@media (max-width: 1200px) { /* Desktops, Large Screens */
+  article {
+    width: 80%;
+  }
+  .breadcrumb-img {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 1024px) { /* Laptops and small screens */
+
+} 
+
+@media (max-width: 768px) { /* Tablets */
+  article {
+    width: 100%;
+  }
+  .breadcrumb-img {
+    max-width: 90%;
+  }
+  td:nth-child(2), th:nth-child(2) {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) { /* Mobile */
+  
+}
